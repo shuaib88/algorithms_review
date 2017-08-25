@@ -1,6 +1,4 @@
-
-def rotation_point_of(word_array, left_index=0, right_index =None):
-
+def rotation_point_of(word_array, left_index=0, right_index=None):
     if not right_index:
         right_index = len(word_array) - 1
 
@@ -13,11 +11,10 @@ def rotation_point_of(word_array, left_index=0, right_index =None):
         return midpoint
 
     else:
-        if word_array[right_index]> word_array[midpoint]:
-            return rotation_point_of(word_array,left_index,midpoint)
-        else:
+        if word_array[midpoint] > word_array[right_index]:
             return rotation_point_of(word_array,midpoint,right_index)
-
+        else:
+            return rotation_point_of(word_array,left_index,midpoint)
 
 # test array
 word_array = [
