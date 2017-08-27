@@ -19,7 +19,6 @@ class Trie:
             if char not in current_node:
                 current_node[char] = {}
                 is_new_word = True
-                print "^ not in dict"
             current_node = current_node[char]
 
         if "End Of Word" not in current_node:

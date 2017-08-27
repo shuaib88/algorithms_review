@@ -17,23 +17,24 @@ def rotation_point_of(word_array, left_index=0, right_index=None):
             return rotation_point_of(word_array,left_index,midpoint)
 
 # test array
-word_array = [
-    'ptolemaic',
-    'retrograde',
-    'supplant',
-    'undulate',
-    'xenoepist',
-    'asymptote', # <-- rotates here!
-    'babka',
-    'banoffee',
-    'engender',
-    'karpatka',
-    'othellolagkage',
-]
 # word_array = [
+#     'ptolemaic',
+#     'retrograde',
+#     'supplant',
+#     'undulate',
 #     'xenoepist',
 #     'asymptote', # <-- rotates here!
+#     'babka',
+#     'banoffee',
+#     'engender',
+#     'karpatka',
+#     'othellolagkage',
 # ]
+
+word_array = [
+    'xenoepist',
+    'asymptote', # <-- rotates here!
+]
 
 
 #execute
