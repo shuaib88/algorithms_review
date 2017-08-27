@@ -1,4 +1,5 @@
 def does_movielist_have_flight_length_movies(movie_lengths, flight_length):
+    # limitation is if there are two movies with the same length,
 
     movie_dict = {}
 
@@ -12,7 +13,19 @@ def does_movielist_have_flight_length_movies(movie_lengths, flight_length):
 
     return False
 
+def does_movielist_have_flight_length_movies(movie_lengths, flight_length):
+    # limitation is if there are two movies with the same length,
 
+    movie_dict = {}
+
+    for movie in movie_lengths:
+        needed_length = flight_length - movie
+        if needed_length in movie_dict:
+            return True
+
+        movie_dict[movie] = {}
+        
+    return False
 
 
 #test values
