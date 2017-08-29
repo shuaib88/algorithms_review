@@ -29,37 +29,6 @@ def max_duffel_bag_value(cake_tuples, max_capacity):
 
     return max_value
 
-
-def max_duffel_bag_value(cake_tuples, max_capacity):
-
-    max_capacity_value = [0]
-
-    for max_weight in range(0,max_capacity+1):
-
-        max_value = 0
-
-        for cake_weight, cake_value in cake_tuples:
-
-            cake_and_cap_diff = max_capacity - cake_weight
-
-            if cake_and_cap_diff >= 0:
-
-                print (cake_and_cap_diff, cake_weight, max_capacity_value)
-                max_value = max_capacity_value[cake_and_cap_diff] + max_capacity_value[cake_weight]
-
-            if cake_weight <= max_weight:
-
-                max_value = max(max_value, cake_value)
-
-        max_capacity_value[max_weight] = max_value
-
-
-    return max_value
-
-
-
-
-
 # test values
 cake_tuples = [(7,160), (3, 90), (2, 15)]
 capacity    = 20
