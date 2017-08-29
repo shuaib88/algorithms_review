@@ -19,7 +19,6 @@ class Queue:
 
         return self.out_stack.pop()
 
-
 #test
 test_queue = Queue()
 test_queue.enqueue(1)
