@@ -26,3 +26,4 @@ b.next = c
 delete_node(b)
 
 
+
