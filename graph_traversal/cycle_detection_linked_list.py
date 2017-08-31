@@ -23,7 +23,35 @@ def does_contain_cycle(node):
 # Space is O(n), Time is O(n)
 
 def does_contain_cycle(node):
-    pass
+
+    current_node = node
+    while current_node:
+        if current_node.value == "visited":
+            return True
+        else:
+            current_node.value = "visited"
+            current_node = current_node.next
+
+    return False
+
+# space O(1), Time is O(n), but destroys the list
+
+def does_contain_cycle(node):
+
+    slow_runner = node
+    fast_runner = node
+
+    while slow_runner.next:
+        if fast_runner.next:
+            if not fast_runner.next.next:
+                break
+            else:
+                fast_runner = fast_runner.next.next
+        if fast_runner == slow_runner:
+            return True
+        slow_runner = slow_runner.next
+    return False
+
 
 
 
