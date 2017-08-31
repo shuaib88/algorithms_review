@@ -41,15 +41,12 @@ def does_contain_cycle(node):
     slow_runner = node
     fast_runner = node
 
-    while slow_runner.next:
-        if fast_runner.next:
-            if not fast_runner.next.next:
-                break
-            else:
-                fast_runner = fast_runner.next.next
+    while fast_runner is not None and fast_runner.next is not None:
+        slow_runner = slow_runner.next
+        fast_runner = fast_runner.next.next
+        
         if fast_runner == slow_runner:
             return True
-        slow_runner = slow_runner.next
     return False
 
 
