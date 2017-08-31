@@ -48,6 +48,32 @@ class MaxStack(Stack):
             return IndexError('no items in stack')
         return self.largest
 
+class MaxStack(Stack):
+
+    def __init__(self):
+        Stack.__init__(self)
+        self.largest = None
+        self.largest_array = []
+
+    def push(self,item):
+        Stack.push(self,item)
+        if item > self.largest:
+
+            if self.largest:
+               self.largest_array.append(self.largest)
+            self.largest = item
+
+
+    def pop(self):
+        if self.peek() == self.largest:
+            self.largest = self.largest_array.pop()
+        Stack.pop(self)
+
+    def get_max(self):
+        if not self.largest:
+            return IndexError('no items in stack')
+        return self.largest
+
 
 
 
